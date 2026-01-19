@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco System - @yield('title')</title>
+    <title>Eco System </title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
             min-height: 100vh;
             color: #333;
             line-height: 1.6;
@@ -45,10 +45,7 @@
         header h1 {
             font-size: 32px;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #000;
         }
 
         nav {
@@ -57,19 +54,19 @@
         }
 
         nav a {
-            color: #667eea;
+            color: #333;
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 8px;
             font-weight: 500;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px solid #333;
         }
 
         nav a:hover {
-            background: #667eea;
+            background: #333;
             color: white;
-            border-color: #667eea;
+            border-color: #333;
             transform: translateY(-2px);
         }
 
@@ -81,9 +78,9 @@
             padding: 18px 24px;
             margin-bottom: 30px;
             border-radius: 12px;
-            background: white;
-            color: #155724;
-            border-left: 5px solid #28a745;
+            background: #f8f8f8;
+            color: #333;
+            border-left: 5px solid #666;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             animation: slideIn 0.3s ease;
         }
@@ -121,7 +118,7 @@
 
         .card h2 {
             margin-bottom: 25px;
-            color: #2c3e50;
+            color: #000;
             font-size: 28px;
             font-weight: 600;
         }
@@ -145,39 +142,39 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #666 0%, #333 100%);
             color: white;
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, #5568d3 0%, #65408b 100%);
+            background: linear-gradient(135deg, #555 0%, #222 100%);
         }
 
         .btn-success {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            background: linear-gradient(135deg, #888 0%, #666 100%);
             color: white;
         }
 
         .btn-success:hover {
-            background: linear-gradient(135deg, #0e8178 0%, #2dd46a 100%);
+            background: linear-gradient(135deg, #777 0%, #555 100%);
         }
 
         .btn-danger {
-            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            background: linear-gradient(135deg, #444 0%, #222 100%);
             color: white;
         }
 
         .btn-danger:hover {
-            background: linear-gradient(135deg, #d42d3f 0%, #de4d39 100%);
+            background: linear-gradient(135deg, #333 0%, #111 100%);
         }
 
         .btn-secondary {
-            background: linear-gradient(135deg, #757f9a 0%, #d7dde8 100%);
+            background: linear-gradient(135deg, #aaa 0%, #ddd 100%);
             color: #333;
         }
 
         .btn-secondary:hover {
-            background: linear-gradient(135deg, #6a7489 0%, #c5cdd9 100%);
+            background: linear-gradient(135deg, #999 0%, #ccc 100%);
         }
 
         .form-group {
@@ -197,7 +194,7 @@
         .form-group select {
             width: 100%;
             padding: 12px 16px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #ddd;
             border-radius: 8px;
             font-size: 15px;
             font-family: inherit;
@@ -208,8 +205,8 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #666;
+            box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.1);
         }
 
         .form-group textarea {
@@ -230,11 +227,11 @@
         th, td {
             padding: 16px;
             text-align: left;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #ddd;
         }
 
         th {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #666 0%, #333 100%);
             color: white;
             font-weight: 600;
             text-transform: uppercase;
@@ -243,7 +240,7 @@
         }
 
         tr:hover {
-            background: #f8f9fa;
+            background: #f5f5f5;
         }
 
         .actions {
@@ -277,7 +274,7 @@
         }
 
         .product-card {
-            border: 2px solid #e0e0e0;
+            border: 2px solid #ddd;
             border-radius: 12px;
             padding: 25px;
             transition: all 0.3s ease;
@@ -286,13 +283,13 @@
         }
 
         .product-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+            border-color: #666;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             transform: translateY(-5px);
         }
 
         .product-card h3 {
-            color: #2c3e50;
+            color: #000;
             margin-bottom: 12px;
             font-size: 20px;
             font-weight: 600;
@@ -314,10 +311,7 @@
         .product-price {
             font-size: 24px;
             font-weight: 700;
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #000;
         }
 
         .badge {
@@ -326,7 +320,7 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #666 0%, #333 100%);
             color: white;
             margin-bottom: 15px;
         }
@@ -348,11 +342,11 @@
         .product-detail-title {
             font-size: 36px;
             margin-bottom: 12px;
-            color: #2c3e50;
+            color: #000;
         }
 
         .product-detail-section {
-            border-top: 2px solid #f0f0f0;
+            border-top: 2px solid #eee;
             padding-top: 35px;
         }
 
@@ -363,15 +357,12 @@
         .price-display h3 {
             font-size: 42px;
             font-weight: 700;
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #000;
             margin-bottom: 8px;
         }
 
         .price-display p {
-            color: #95a5a6;
+            color: #777;
             font-size: 14px;
         }
 
@@ -380,7 +371,7 @@
         }
 
         .info-section h3 {
-            color: #2c3e50;
+            color: #000;
             margin-bottom: 15px;
             font-size: 20px;
         }
@@ -392,10 +383,10 @@
         }
 
         .info-box {
-            background: #f8f9fa;
+            background: #f8f8f8;
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #666;
         }
 
         .info-box p {
@@ -408,11 +399,11 @@
         }
 
         .info-box strong {
-            color: #333;
+            color: #000;
         }
 
         .info-box a {
-            color: #667eea;
+            color: #333;
             text-decoration: none;
             font-weight: 600;
         }
@@ -422,12 +413,12 @@
         }
 
         .error-alert {
-            background: #f8d7da;
-            color: #721c24;
+            background: #f0f0f0;
+            color: #333;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 25px;
-            border-left: 4px solid #f5c6cb;
+            border-left: 4px solid #ccc;
         }
 
         .error-alert strong {
@@ -476,13 +467,14 @@
 </head>
 <body>
     <header>
+
         <div class="container">
             <div class="header-content">
-                <h1>🛒 Eco System</h1>
-                <nav>
+                <h1> Eco System</h1>
+                 <nav> 
                     <a href="{{ route('categories.index') }}">Categories</a>
                     <a href="{{ route('products.index') }}">All Products</a>
-                </nav>
+                    </nav>
             </div>
         </div>
     </header>
@@ -490,7 +482,7 @@
     <div class="container main-content">
         @if(session('success'))
             <div class="alert">
-                ✓ {{ session('success') }}
+                 {{ session('success') }}
             </div>
         @endif
 
@@ -498,4 +490,3 @@
     </div>
 </body>
 </html>
-EOF
