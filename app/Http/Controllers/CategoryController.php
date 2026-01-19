@@ -12,11 +12,13 @@ class CategoryController extends Controller
 
 
 
+//  flow for each function (Behave) on DB - validate / action> CRUD / redirect (route)
 
     public function index()
     {    // display the categories 
 
         $categories = Category::all();
+        // return
         return view('categories.index', compact('categories'));
     }
 
@@ -30,7 +32,7 @@ class CategoryController extends Controller
     // store in DB
     public function store(Request $request)
     {
-        // Quick validation 
+        // quick validation 
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
@@ -39,7 +41,7 @@ class CategoryController extends Controller
         Category::create($request->all());
             //  after creation go to .index
         return redirect()->route('categories.index')
-            ->with('success', 'Category was created ');
+            ->with('success', 'Category  created ');
     }
 
 
@@ -47,8 +49,13 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         $category->load('products');
+        
+          
         return view('categories.show', compact('category'));
     }
+
+
+
 
     public function edit(Category $category)
     {
@@ -69,14 +76,14 @@ class CategoryController extends Controller
             ->with('success', 'Category updated successfully!');
     }
 
-    // Delete the  category
+    // delete action     the  category
     public function destroy(Category $category)
     {
 
         $category->delete();
         //after deletion go to .index
         return redirect()->route('categories.index')
-            ->with('success', 'Category deleted successfully!');
+            ->with('success', 'Category deleted ');
     }
 }
 

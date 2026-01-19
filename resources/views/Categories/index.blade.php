@@ -7,7 +7,7 @@
     <div class="card">
         <div class="header-flex">
             <h2>All Categories</h2>
-            <a href="{{ route('categories.create') }}" class="btn btn-success">+ Create New Category</a>
+            <a href="{{ route('categories.create') }}" class="btn btn-success"> Create new Category</a>
         </div>
 
         @if($categories->count() > 0)
@@ -33,9 +33,11 @@
                                 <td>{{ $category->products->count() }} products</td>
                                 <td>
                                     <div class="actions">
+
+
                                         <a href="{{ route('categories.show', $category) }}" class="btn btn-primary">View</a>
                                         <a href="{{ route('categories.edit', $category) }}" class="btn btn-secondary">Edit</a>
-                                        <form action="{{ route('categories.destroy', $category) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?')">
+                                        <form action="{{ route('categories.destroy', $category) }}" method="POST" >
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -49,7 +51,7 @@
             </div>
         @else
             <div class="empty-state">
-                📦 No categories found. Create your first category to get started!
+                 No categories found. Create your first category
             </div>
         @endif
     </div>

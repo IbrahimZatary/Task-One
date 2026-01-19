@@ -14,7 +14,7 @@
                 <form action="{{ route('products.destroy', $product) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this product?')">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">🗑️ Delete</button>
+                    <button type="submit" class="btn btn-danger"> Delete</button>
                 </form>
             </div>
         </div>
@@ -26,12 +26,12 @@
             </div>
 
             <div class="info-section">
-                <h3>📋 Description</h3>
+                <h3> Description</h3>
                 <p>{{ $product->description ?: 'No description available for this product.' }}</p>
             </div>
 
             <div class="info-section">
-                <h3>ℹ️ Product Information</h3>
+                <h3>ℹ Product Information</h3>
                 <div class="info-box">
                     <p><strong>Product ID:</strong> #{{ $product->id }}</p>
                     <p><strong>Category:</strong> 
@@ -45,10 +45,9 @@
             </div>
 
             <div class="btn-group" style="margin-top: 35px;">
-                <a href="{{ route('categories.show', $product->category) }}" class="btn btn-primary">← Back to {{ $product->category->name }}</a>
+                <a href="{{ route('categories.show', $product->category) }}" class="btn btn-primary"> Back to {{ $product->category->name }}</a>
                 <a href="{{ route('categories.index') }}" class="btn btn-secondary">View All Categories</a>
             </div>
         </div>
     </div>
 @endsection
-EOF

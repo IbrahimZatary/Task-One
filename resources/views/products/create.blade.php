@@ -8,7 +8,7 @@
 
         @if ($errors->any())
             <div class="error-alert">
-                <strong>⚠️ Oops! Please fix the following errors:</strong>
+                <strong> Please fix the following errors:</strong>
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -22,12 +22,12 @@
 
             <div class="form-group">
                 <label for="name">Product Name *</label>
-                <input type="text" name="name" id="name" value="{{ old('name') }}" required placeholder="e.g., iPhone 15 Pro, Nike Air Max">
+                <input type="text" name="name" id="name" value="{{ old('name') }}" required placeholder="Type here">
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" placeholder="Enter product description, features, specifications...">{{ old('description') }}</textarea>
+                <textarea name="description" id="description" placeholder="Product description">{{ old('description') }}</textarea>
             </div>
 
             <div class="form-group">
@@ -49,9 +49,8 @@
 
             <div class="btn-group">
                 <button type="submit" class="btn btn-success">✓ Create Product</button>
-                <a href="{{ route('categories.index') }}" class="btn btn-secondary">✕ Cancel</a>
+                <a href="{{ route('categories.index') }}" class="btn btn-secondary"> Cancel</a>
             </div>
         </form>
     </div>
 @endsection
-EOF

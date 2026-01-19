@@ -22,18 +22,18 @@
             @csrf
 
             <div class="form-group">
-                <label for="name">Category Name *</label>
-                <input type="text" name="name" id="name" value="{{ old('name') }}" required placeholder="e.g., Electronics, Clothing, Books">
-            </div>
+                <label for="name">Category Name </label>
+                <input type="text" name="name" id="name" value="{{ old('name') }}" required placeholder="e.g., cars, watches , Books">
+               </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" placeholder="Enter a brief description of this category">{{ old('description') }}</textarea>
+                   <textarea name="description" id="description" placeholder="Enter a brief description ">{{ old('description') }}</textarea>
             </div>
 
             <div class="btn-group">
-                <button type="submit" class="btn btn-success">✓ Create Category</button>
-                <a href="{{ route('categories.index') }}" class="btn btn-secondary">✕ Cancel</a>
+                <button type="submit" class="btn btn-success"> Create Category</button>
+                <a href="{{ route('categories.index') }}" class="btn btn-secondary"> Cancel</a>
             </div>
         </form>
     </div>

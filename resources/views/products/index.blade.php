@@ -6,7 +6,7 @@
     <div class="card">
         <div class="header-flex">
             <h2>All Products</h2>
-            <a href="{{ route('categories.index') }}" class="btn btn-primary">← Back to Categories</a>
+            <a href="{{ route('categories.index') }}" class="btn btn-primary"> Back to Categories</a>
         </div>
 
         @if($products->count() > 0)
@@ -52,9 +52,8 @@
             </div>
         @else
             <div class="empty-state">
-                📦 No products found.<br>Start by creating a category, then add products to it!
+                 No products found.<br>
             </div>
         @endif
     </div>
 @endsection
-EOF

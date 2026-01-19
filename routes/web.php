@@ -1,29 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\SimpleAuthController;
 use App\Http\Controllers\CategoryController;
-
 use App\Http\Controllers\ProductController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// here is the routes with - no middleware need
+Route::get('/login', [SimpleAuthController::class, 'showLogin'])->name('simple.login');
+Route::post('/login', [SimpleAuthController::class, 'login'])->name('login.post'); // ADD NAME!
 
+Route::post('/logout', [SimpleAuthController::class, 'logout'])->name('simple.logout');
 
-// Starting route 
 Route::get('/', function () {
-    return redirect()->route('categories.index');
+    return redirect()->route('simple.login');
 });
-// recourse create CRUD by default to not create seperatly cretae/ delete/ shoe ..etc
 
-Route::resource('categories', CategoryController::class);
-Route::resource('products', ProductController::class);
+// for  admin  GROUPED with middleware
+Route::middleware(['admin'])->group(function () {
+    Route::resource('categories', CategoryController::class);
+    Route::resource('products', ProductController::class);
+});

@@ -6,12 +6,12 @@
     <div class="card">
         <div class="header-flex">
             <div>
-                <h2>{{ $category->name }}</h2>
+                   <h2>{{ $category->name }}</h2>
                 <p style="color: #666; margin-top: 10px; font-size: 16px;">{{ $category->description }}</p>
             </div>
             <div class="btn-group">
-                <a href="{{ route('categories.edit', $category) }}" class="btn btn-secondary">✏️ Edit Category</a>
-                <a href="{{ route('categories.index') }}" class="btn btn-primary">← Back</a>
+                <a href="{{ route('categories.edit', $category) }}" class="btn btn-secondary"> Edit Category</a>
+                <a href="{{ route('categories.index') }}" class="btn btn-primary"> Back</a>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
     <div class="card">
         <div class="header-flex">
             <h2>Products in {{ $category->name }}</h2>
-            <a href="{{ route('products.create', ['category_id' => $category->id]) }}" class="btn btn-success">+ Add New Product</a>
+            <a href="{{ route('products.create', ['category_id' => $category->id]) }}" class="btn btn-success"> Add New Product</a>
         </div>
 
         @if($category->products->count() > 0)
@@ -37,7 +37,7 @@
             </div>
         @else
             <div class="empty-state">
-                📦 No products in this category yet.<br>Click "Add New Product" to create your first product!
+                 No products in this category yet.<br>
             </div>
         @endif
     </div>

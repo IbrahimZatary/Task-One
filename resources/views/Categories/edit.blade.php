@@ -4,11 +4,14 @@
 
 @section('content')
     <div class="card">
-        <h2>Edit Category: {{ $category->name }}</h2>
+
+
+
+           <h2>Edit Category: {{ $category->name }}</h2>
 
         @if ($errors->any())
             <div class="error-alert">
-                <strong>⚠️ Oops! Please fix the following errors:</strong>
+                <strong>  Please fix the following errors:</strong>
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -22,7 +25,7 @@
             @method('PUT')
 
             <div class="form-group">
-                <label for="name">Category Name *</label>
+                <label for="name">Category Name </label>
                 <input type="text" name="name" id="name" value="{{ old('name', $category->name) }}" required>
             </div>
 
@@ -33,7 +36,7 @@
 
             <div class="btn-group">
                 <button type="submit" class="btn btn-success">✓ Update Category</button>
-                <a href="{{ route('categories.index') }}" class="btn btn-secondary">✕ Cancel</a>
+                <a href="{{ route('categories.index') }}" class="btn btn-secondary"> Cancel</a>
             </div>
         </form>
     </div>

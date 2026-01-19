@@ -9,7 +9,7 @@ use App\Models\Category;
 
 use Illuminate\Http\Request;
 
-//  flow for each function (Behave) on DB - validate / action> CRUD / redirect (route)
+// (Behave) on DB - validate / action> CRUD / redirect (route)
 class ProductController extends Controller
 {
     // show all products
@@ -91,4 +91,5 @@ class ProductController extends Controller
         return redirect()->route('categories.show', $category_id)
             ->with('success', 'Product deleted successfully!');
     }
+    // to product list 
 }
