@@ -18,8 +18,12 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+
+// Starting route 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('categories.index');
 });
+// recourse create CRUD by default to not create seperatly cretae/ delete/ shoe ..etc
+
 Route::resource('categories', CategoryController::class);
 Route::resource('products', ProductController::class);

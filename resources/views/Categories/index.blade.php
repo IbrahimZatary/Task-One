@@ -1,39 +1,57 @@
+
 @extends('layouts.app')
 
-@section('title', 'Create Category')
+@section('title', 'Categories')
 
 @section('content')
     <div class="card">
-        <h2>Create New Category</h2>
+        <div class="header-flex">
+            <h2>All Categories</h2>
+            <a href="{{ route('categories.create') }}" class="btn btn-success">+ Create New Category</a>
+        </div>
 
-        @if ($errors->any())
-            <div class="error-alert">
-                <strong>⚠️ Oops! Please fix the following errors:</strong>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+        @if($categories->count() > 0)
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Products Count</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($categories as $category)
+                            <tr>
+                                <td>{{ $category->id }}</td>
+                                <td>
+                                    <strong>{{ $category->name }}</strong>
+                                </td>
+                                <td>{{ Str::limit($category->description, 50) }}</td>
+                                <td>{{ $category->products->count() }} products</td>
+                                <td>
+                                    <div class="actions">
+                                        <a href="{{ route('categories.show', $category) }}" class="btn btn-primary">View</a>
+                                        <a href="{{ route('categories.edit', $category) }}" class="btn btn-secondary">Edit</a>
+                                        <form action="{{ route('categories.destroy', $category) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        @else
+            <div class="empty-state">
+                📦 No categories found. Create your first category to get started!
             </div>
         @endif
-
-        <form action="{{ route('categories.store') }}" method="POST">
-            @csrf
-
-            <div class="form-group">
-                <label for="name">Category Name *</label>
-                <input type="text" name="name" id="name" value="{{ old('name') }}" required placeholder="e.g., Electronics, Clothing, Books">
-            </div>
-
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea name="description" id="description" placeholder="Enter a brief description of this category">{{ old('description') }}</textarea>
-            </div>
-
-            <div class="btn-group">
-                <button type="submit" class="btn btn-success">✓ Create Category</button>
-                <a href="{{ route('categories.index') }}" class="btn btn-secondary">✕ Cancel</a>
-            </div>
-        </form>
     </div>
 @endsection
+EOF

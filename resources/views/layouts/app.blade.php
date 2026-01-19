@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco System  @yield('title')</title>
+    <title>Eco System - @yield('title')</title>
     <style>
         * {
             margin: 0;
@@ -19,14 +19,12 @@
             line-height: 1.6;
         }
 
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -53,7 +51,6 @@
             background-clip: text;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             gap: 15px;
@@ -76,12 +73,10 @@
             transform: translateY(-2px);
         }
 
-        /* Main Content */
         .main-content {
             padding-bottom: 50px;
         }
 
-        /* Alert Messages */
         .alert {
             padding: 18px 24px;
             margin-bottom: 30px;
@@ -104,7 +99,6 @@
             }
         }
 
-        /* Card */
         .card {
             background: white;
             border-radius: 16px;
@@ -132,7 +126,6 @@
             font-weight: 600;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -187,7 +180,6 @@
             background: linear-gradient(135deg, #6a7489 0%, #c5cdd9 100%);
         }
 
-        /* Form Elements */
         .form-group {
             margin-bottom: 25px;
         }
@@ -225,7 +217,6 @@
             min-height: 120px;
         }
 
-        /* Table */
         .table-container {
             overflow-x: auto;
         }
@@ -255,7 +246,6 @@
             background: #f8f9fa;
         }
 
-        /* Actions */
         .actions {
             display: flex;
             gap: 10px;
@@ -266,7 +256,6 @@
             display: inline;
         }
 
-        /* Header Flex */
         .header-flex {
             display: flex;
             justify-content: space-between;
@@ -274,14 +263,12 @@
             margin-bottom: 25px;
         }
 
-        /* Button Group */
         .btn-group {
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
         }
 
-        /* Product Grid */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -333,7 +320,6 @@
             background-clip: text;
         }
 
-        /* Badge */
         .badge {
             display: inline-block;
             padding: 6px 14px;
@@ -345,7 +331,6 @@
             margin-bottom: 15px;
         }
 
-        /* Empty State */
         .empty-state {
             text-align: center;
             color: #999;
@@ -353,7 +338,6 @@
             font-size: 16px;
         }
 
-        /* Product Details */
         .product-detail-header {
             display: flex;
             justify-content: space-between;
@@ -437,7 +421,6 @@
             text-decoration: underline;
         }
 
-        /* Error Messages */
         .error-alert {
             background: #f8d7da;
             color: #721c24;
@@ -460,7 +443,6 @@
             margin-top: 8px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             header .header-content {
                 flex-direction: column;
@@ -505,12 +487,10 @@
         </div>
     </header>
 
-
-
     <div class="container main-content">
         @if(session('success'))
             <div class="alert">
-                Success{{ session('success') }}
+                ✓ {{ session('success') }}
             </div>
         @endif
 
@@ -518,3 +498,4 @@
     </div>
 </body>
 </html>
+EOF

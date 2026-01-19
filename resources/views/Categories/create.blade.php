@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('title', 'Create Category')
@@ -37,3 +38,4 @@
         </form>
     </div>
 @endsection
+EOF

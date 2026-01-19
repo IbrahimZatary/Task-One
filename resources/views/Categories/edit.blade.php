@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Create Category')
+@section('title', 'Edit Category')
 
 @section('content')
     <div class="card">
-        <h2>Create New Category</h2>
+        <h2>Edit Category: {{ $category->name }}</h2>
 
         @if ($errors->any())
             <div class="error-alert">
@@ -17,23 +17,25 @@
             </div>
         @endif
 
-        <form action="{{ route('categories.store') }}" method="POST">
+        <form action="{{ route('categories.update', $category) }}" method="POST">
             @csrf
+            @method('PUT')
 
             <div class="form-group">
                 <label for="name">Category Name *</label>
-                <input type="text" name="name" id="name" value="{{ old('name') }}" required placeholder="e.g., Electronics, Clothing, Books">
+                <input type="text" name="name" id="name" value="{{ old('name', $category->name) }}" required>
             </div>
 
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" placeholder="Enter a brief description of this category">{{ old('description') }}</textarea>
+                <textarea name="description" id="description">{{ old('description', $category->description) }}</textarea>
             </div>
 
             <div class="btn-group">
-                <button type="submit" class="btn btn-success">✓ Create Category</button>
+                <button type="submit" class="btn btn-success">✓ Update Category</button>
                 <a href="{{ route('categories.index') }}" class="btn btn-secondary">✕ Cancel</a>
             </div>
         </form>
     </div>
 @endsection
+EOF
